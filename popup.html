@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Notification Creator</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="creator-panel">
+            <h2>Create Your Notification</h2>
+            <div class="form-group">
+                <label for="notification-title">Title</label>
+                <input type="text" id="notification-title" placeholder="Enter notification title">
+            </div>
+            <div class="form-group">
+                <label for="notification-message">Message</label>
+                <textarea id="notification-message" placeholder="Enter your message"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notification-type">Type</label>
+                <select id="notification-type">
+                    <option value="info">Info</option>
+                    <option value="success">Success</option>
+                    <option value="warning">Warning</option>
+                    <option value="error">Error</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="notification-position">Position</label>
+                <select id="notification-position">
+                    <option value="top-right">Top Right</option>
+                    <option value="top-left">Top Left</option>
+                    <option value="bottom-right">Bottom Right</option>
+                    <option value="bottom-left">Bottom Left</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="notification-duration">Duration (seconds)</label>
+                <input type="number" id="notification-duration" value="5" min="1" max="60">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notification-sound" checked>
+                    Play Sound
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notification-vibration" checked>
+                    Vibrate
+                </label>
+            </div>
+            <button id="create-notification" class="create-btn">
+                <i class="fas fa-bell"></i> Create Notification
+            </button>
+        </div>
+
+        <div class="preview-panel">
+            <h2>Preview</h2>
+            <div class="preview-container">
+                <div class="preview-notification" id="preview-notification">
+                    <div class="notification-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Sample Title</h3>
+                        <p>This is a sample notification message.</p>
+                    </div>
+                    <button class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notifications-container"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
